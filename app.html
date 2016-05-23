@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="acronymSearch">
+  <head>
+    <meta charset="UTF-8" />
+    <title>gAcronyms</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body ng-controller="DataController as data" ng-init="data.updateData();">
+    <div>
+      <a class="pull-left" href="https://sites.google.com/a/gene.com/globalacronyms/"><img src="images/genenlogo.png" alt="Octodad" height="70" width="280"></a>
+      <h2 class="pull-right" id="search-title">
+        <input type="text" id="search-box" placeholder="Search acronym.." ng-model="search.name" autofocus tabindex="1" />
+      </h2>
+    </div>
+  	<div class="container table-head-container" ng-if="!errorValue">
+    	<table class="table table-hover table-condensed table-striped full-width">
+    	    <thead>
+        		<tr>
+          		<th class="table-acronym">ACRONYM</th>
+          		<th class="table-definition">DEFINITION</th>
+        		</tr>
+    		</thead>
+    	</table>
+  	</div>
+    <div class="container table-body-container" ng-if="!errorValue">
+      <table class="table table-hover table-condensed table-striped full-width">
+        <tbody>
+    		<tr ng-repeat="entry in acronymList | orderBy : 'name' | filter:search:startsWith">
+      		<td class="table-acronym def-tooltip">
+            <div>
+              <img class="callout" src="images/callout_black.gif" />
+              <strong>Description</strong><br/>
+              <a ng-if="'Not available - submit one!' == entry.description" href="https://docs.google.com/a/gene.com/forms/d/1-NUdNTGwMoRSv0UHfdZP6FBUbCfutC5UzylpGSKs7Y8/viewform">{{entry.description}}</a>
+              <p ng-if="'Not available - submit one!' !== entry.description">{{entry.description}}</p>
+            </div>
+            {{entry.name}}
+          </td>
+      		<td class="table-definition">{{entry.definition}}</td>
+    		</tr>
+        </tbody>
+  	   </table>
+    </div>
+    <div class="container error-container" ng-if="errorValue">
+      <div class="alert alert-danger error-message">
+        <strong>Error:</strong> Please check that you are connected to the Genentech/Roche network.
+      </div>
+    </div>
+    <div>
+    	<p class="disclaimer pull-left">Disclaimer: gAcronyms is not a GMP regulated system.</p>
+      <a id="feedback-link" class="pull-right" href="https://docs.google.com/forms/d/1B6fZsA7dtY0OpuOOOT66bevXcx_SbhGHes3b3Wpy9dk/viewform" target="_blank">Feedback</a>
+      <a id="submit-link" class="pull-right" href="https://docs.google.com/forms/d/1-NUdNTGwMoRSv0UHfdZP6FBUbCfutC5UzylpGSKs7Y8/viewform" target="_blank">Submit Acronym</a>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/call.js"></script>
+  </body>
+</html>

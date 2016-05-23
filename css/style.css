@@ -1,0 +1,143 @@
+body {
+  height: 320px;
+  width: 606px;
+}
+
+table, th, td {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 300px;
+}
+
+tr {
+	border-bottom: 1px dotted grey;
+}
+
+tr:first-child {
+	border-bottom: 0px solid white;
+}
+
+th, td {
+	padding: 5px;
+}
+
+thead {
+  background-color: #195695;
+  color: white;
+}
+
+form {
+  float: left;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.table-head-container {
+  width: 565px;
+  padding-top: 12px;
+  overflow-y: auto;
+  margin-right: 47px;
+}
+
+.table-body-container {
+  height: 244px;
+  margin-top: -20px;
+  width: 580px;
+  margin-right: 30px;
+  overflow-y: scroll;
+}
+
+.table-acronym {
+  width: 22px;
+}
+
+.table-definition {
+  width: 50px;
+}
+
+#search-title {
+  padding-top: -30px;
+}
+
+#search-box {
+  width: 246px;
+  margin-right: 56px;
+  font-size: 20px;
+}
+
+td.def-tooltip {
+  position:relative;
+}
+
+td.def-tooltip strong {
+  line-height:30px;
+}
+
+td.def-tooltip div {
+  z-index:10;
+  display:none;
+  padding:14px 20px;
+  margin-top:35px;
+  margin-left:-10px;
+  width:300px;
+  line-height:16px;
+}
+
+td.def-tooltip:hover div {
+  display:block;
+  position:absolute;
+  border:2px solid #FFF;
+  color:#FFF;
+  background-image: url('../images/css-tooltip-gradient-bg.png');
+  background-repeat: repeat-x;
+}
+
+td.def-tooltip div {
+  border-radius:2px;
+  box-shadow: 0px 0px 8px 4px #666;
+}
+
+.callout {
+  z-index:20;
+  position:absolute;
+  border:0;
+  top:-14px;
+  left:5px;
+}
+
+#submit-link {
+  padding-top: 17px;
+}
+
+#feedback-link {
+  padding-top: 17px;
+  padding-left: 10px;
+  padding-right: 27px;
+}
+
+.disclaimer {
+  font-style: italic;
+  padding-left: 20px;
+  padding-top: 20px;
+  font-size: 10px;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 4px gray;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.error-container {
+  height: 362px;
+}
+
+.error-message {
+  top: 96px;
+  position: fixed;
+  width: 570px;
+  text-align: center;
+}
