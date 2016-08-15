@@ -1,6 +1,7 @@
 body {
   height: 320px;
-  width: 606px;
+  width: 582px;
+  background: #f2f9fc;
 }
 
 table, th, td {
@@ -34,7 +35,7 @@ form {
 
 .table-head-container {
   width: 565px;
-  padding-top: 12px;
+  padding-top: 4px;
   overflow-y: auto;
   margin-right: 47px;
 }
@@ -60,59 +61,89 @@ form {
 }
 
 #search-box {
-  width: 246px;
-  margin-right: 56px;
-  font-size: 20px;
+  width: 250px;
+  height: 38px;
+  padding: 5px;
+  margin-right: 32px;
+  margin-top: 36px;
+  font-size: 16px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1pt solid #989898;
+  text-transform: uppercase;
+}
+
+input::-webkit-input-placeholder {
+	color: #989898;
+  text-transform: none;
+}
+input::-moz-placeholder {
+	color: #989898;
+  text-transform: none;
+}
+input:-moz-placeholder {   /* Older versions of Firefox */
+	color: #989898;
+  text-transform: none;
+}
+input:-ms-input-placeholder {
+	color: #989898;
+  text-transform: none;
 }
 
 td.def-tooltip {
-  position:relative;
+  position: relative;
 }
 
 td.def-tooltip strong {
-  line-height:30px;
+  line-height: 30px;
 }
 
 td.def-tooltip div {
-  z-index:10;
-  display:none;
-  padding:14px 20px;
-  margin-top:35px;
-  margin-left:-10px;
-  width:300px;
-  line-height:16px;
+  z-index: 10;
+  display: none;
+  padding: 14px 20px;
+  margin-top: 35px;
+  margin-left: -10px;
+  width: 300px;
+  line-height: 16px;
 }
 
 td.def-tooltip:hover div {
-  display:block;
-  position:absolute;
-  border:2px solid #FFF;
-  color:#FFF;
+  display: block;
+  position: absolute;
+  border: 2px solid #FFF;
+  color: #FFF;
   background-image: url('../images/css-tooltip-gradient-bg.png');
   background-repeat: repeat-x;
 }
 
 td.def-tooltip div {
-  border-radius:2px;
+  border-radius: 2px;
   box-shadow: 0px 0px 8px 4px #666;
 }
 
 .callout {
-  z-index:20;
-  position:absolute;
-  border:0;
-  top:-14px;
-  left:5px;
+  z-index: 20;
+  position: absolute;
+  border: 0;
+  top: -14px;
+  left: 5px;
 }
 
 #submit-link {
   padding-top: 17px;
 }
 
+#line-divider {
+  padding-top: 17px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
 #feedback-link {
   padding-top: 17px;
-  padding-left: 10px;
-  padding-right: 27px;
+  padding-right: 34px;
 }
 
 .disclaimer {
@@ -124,7 +155,6 @@ td.def-tooltip div {
 
 input:focus {
   outline: none;
-  box-shadow: 0 0 4px gray;
 }
 
 .full-width {
@@ -136,8 +166,8 @@ input:focus {
 }
 
 .error-message {
-  top: 96px;
+  top: 110px;
   position: fixed;
-  width: 570px;
+  width: 535px;
   text-align: center;
 }

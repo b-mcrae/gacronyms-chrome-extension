@@ -8,9 +8,9 @@
   </head>
   <body ng-controller="DataController as data" ng-init="data.updateData();">
     <div>
-      <a class="pull-left" href="https://sites.google.com/a/gene.com/globalacronyms/"><img src="images/genenlogo.png" alt="Octodad" height="70" width="280"></a>
+      <a class="pull-left" href="https://sites.google.com/a/gene.com/globalacronyms/"><img src="images/global_acronyms2.png" alt="Global Acronyms" height="110" width="280"></a>
       <h2 class="pull-right" id="search-title">
-        <input type="text" id="search-box" placeholder="Search acronym.." ng-model="search.name" autofocus tabindex="1" />
+        <input type="text" id="search-box" placeholder="Search acronym.." ng-model="search" autofocus tabindex="1" />
       </h2>
     </div>
   	<div class="container table-head-container" ng-if="!errorValue">
@@ -26,7 +26,7 @@
     <div class="container table-body-container" ng-if="!errorValue">
       <table class="table table-hover table-condensed table-striped full-width">
         <tbody>
-    		<tr ng-repeat="entry in acronymList | orderBy : 'name' | filter:search:startsWith">
+    		<tr ng-repeat="entry in acronymList | orderBy : 'name' | filter:search:startsWith track by entry.id">
       		<td class="table-acronym def-tooltip">
             <div>
               <img class="callout" src="images/callout_black.gif" />
@@ -48,8 +48,9 @@
     </div>
     <div>
     	<p class="disclaimer pull-left">Disclaimer: gAcronyms is not a GMP regulated system.</p>
-      <a id="feedback-link" class="pull-right" href="https://docs.google.com/forms/d/1B6fZsA7dtY0OpuOOOT66bevXcx_SbhGHes3b3Wpy9dk/viewform" target="_blank">Feedback</a>
-      <a id="submit-link" class="pull-right" href="https://docs.google.com/forms/d/1-NUdNTGwMoRSv0UHfdZP6FBUbCfutC5UzylpGSKs7Y8/viewform" target="_blank">Submit Acronym</a>
+      <a id="feedback-link" class="pull-right" href="https://docs.google.com/a/gene.com/forms/d/1KkjKpPZWThYVlLckAzqZKSMIQpfL1KBqthtr_mlqVG8/viewform" target="_blank">Feedback</a>
+      <p id="line-divider" class="pull-right">|</p>
+      <a id="submit-link" class="pull-right" href="https://docs.google.com/a/gene.com/forms/d/1ZzTJCx0XH5Qygs_jBwjpv5M1e_DdfUOPNraX-D0ANsk/viewform" target="_blank">Submit Acronym</a>
     </div>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/angular.min.js"></script>
