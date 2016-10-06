@@ -6,11 +6,22 @@
   "permissions": [
     "http://*.gene.com/"
   ],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
   "icons": { "16": "images/global_acronyms_128.png",
 			 "48": "images/global_acronyms_128.png",
 			 "128": "images/global_acronyms_128.png" },
   "browser_action": {
     "default_icon": "images/global_acronyms_128.png",
     "default_popup": "app.html"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+A",
+        "mac": "Alt+A",
+        "chromeos": "Ctrl+Shift+A",
+        "linux": "Ctrl+Shift+A"
+      }
+    }
   }
 }

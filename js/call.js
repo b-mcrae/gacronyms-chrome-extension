@@ -2,25 +2,27 @@ var app = angular.module('acronymSearch', [])
 app.controller('DataController', function($scope) {
 	$scope.acronymList = "";
 	$scope.errorValue = false;
-	this.updateData = function init() {
-		$.ajax({
-  		url: [BACKEND ROUTE],
-		}).done(function(data) {
-			data = data.filter(function(obj) {
-				if (obj.name === null || obj.name === "") {
-					return false;
-				}
-				else {
-					return true;
-				}
+	this.updateData = function() {
+		setTimeout(function() {
+			$.ajax({
+				url: [BACKEND ROUTE],
+			}).done(function(data) {
+				data = data.filter(function(obj) {
+					if (obj.name === null || obj.name === "") {
+						return false;
+					}
+					else {
+						return true;
+					}
+				});
+				$scope.acronymList = data;
+				$scope.$apply();
+			})
+			.fail(function() {
+				$scope.errorValue = true;
+				$scope.$apply();
 			});
-			$scope.acronymList = data;
-			$scope.$apply();
-		})
-		.fail(function() {
-			$scope.errorValue = true;
-			$scope.$apply();
-		});
+		}, 100)
 	};
 	$scope.startsWith = function(actual, expected) {
 		var lowerStr = (actual + "").toLowerCase();
